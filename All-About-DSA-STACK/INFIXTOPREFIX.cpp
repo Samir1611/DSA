@@ -85,7 +85,7 @@ public:
         push_in_postStack(pop_opStack());
     }
 
-    cout << "\n\nThe postfix is: ";
+    cout << "\n\nThe prefix is: ";
     for (i = postStacktop; i >=0 ; i--) {
         cout << postStack[i];
     }
