@@ -19,8 +19,7 @@ public:
         front = NULL;
         rear = NULL;
     }
-
-    void enqueue(int data) {
+   void enqueueatEnd(int data) {
         Node* new_node = new Node(data);
         if (rear == NULL) {
             front = new_node;
@@ -31,20 +30,7 @@ public:
             rear = new_node;
         }
     }
-    void enqueueatEnd(int data){
-    Node* new_node = new Node(data);
-    Node*temp = front;
-    	  if (rear == NULL) {
-            front = new_node;
-            rear = new_node;
-        }
-        while(temp->next!=NULL){
-        	
-        	temp=temp->next;
-		}
-		temp->next = new_node;
-	}
-    void dequeue() {
+    void dequeuefromFront() {
         if (front == NULL) {
             cout << "Queue is empty, nothing to dequeue" << endl;
             return;
@@ -60,29 +46,6 @@ public:
         }
         delete temp;
     }
-    
-    void dequeueatEnd() {
-    if (front == NULL) {
-        cout << "Queue is empty, nothing to delete" << endl;
-        return;
-    }
-    if (front->next == NULL) {
-        cout << "Deleted item is " << front->data << endl;
-        delete front;
-        front = NULL;
-        rear = NULL;
-        return;
-    }
-    Node* temp = front;
-    while (temp->next->next != NULL) {
-        temp = temp->next;
-    }
-    Node* to_delete = temp->next;
-    cout << "Deleted item is " << to_delete->data << endl;
-    delete to_delete;
-    temp->next = NULL;
-    rear = temp; 
-}
 
 
     void peek() {
@@ -113,33 +76,26 @@ int main() {
     Queue queue;
     int choice, data;
     while (true) {
-        cout << "1. Enqueue at Head\t\t2. Enqueue at Tail\t\t3. Delete at Head\n4.Delete at Tail\t\t5.Peek\t\t\t\t6. Display\t\t 7. Exit\n";
+        cout << "1.Enqueue at End\t\t2. Delete from  Front\n3.Peek\t\t\t\t\t4. Display\t 5. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
         switch (choice) {
+    
         case 1:
-            cout << "Enter data to enqueue: ";
-            cin >> data;
-            queue.enqueue(data);
-            break;
-        case 2:
         	 cout << "Enter data to enqueue: ";
             cin >> data;
             queue.enqueueatEnd(data);
             break;
+        case 2:
+            queue.dequeuefromFront();
+            break;
         case 3:
-            queue.dequeue();
-            break;
-        case 4:
-            queue.dequeueatEnd();
-            break;
-        case 5:
             queue.peek();
             break;
-        case 6:
+        case 4:
             queue.display();
             break;
-        case 7:
+        case 5:
             cout << "Exiting...";
             return 0;
         default:
