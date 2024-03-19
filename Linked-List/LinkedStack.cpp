@@ -18,7 +18,7 @@ using namespace std;
 		        head = NULL;
 		    }
 		    
-		int pushatbeg(int data){
+		void pushatbeg(int data){
 			Node* new_node = new Node(data);	
 			new_node->next = head;
 			head = new_node; 
