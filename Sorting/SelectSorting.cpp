@@ -1,13 +1,5 @@
 #include<iostream>
 using namespace std;
-
-	void swap(int &a1,int &a2){
-//		for(i =)
-		int temp = a1;
-		a1 = a2;
-		a2 = temp;
-	}
-
 	int main(){
 		int n;
 		
