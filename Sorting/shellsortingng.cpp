@@ -23,8 +23,9 @@ using namespace std;
 			   for (j = i; j >= gap && arr[j - gap] > temp; j -= gap){
 			   
                 arr[j] = arr[j - gap];
-                arr[j] = temp;
+                
         }
+        arr[j] = temp;
 			}
 		}
 			
