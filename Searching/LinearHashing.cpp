@@ -30,8 +30,9 @@ int main() {
         } else {
             while (taken[position]) {
                 position = (position + 1) % n;
+		    prob2++;
             }
-                prob2++;
+                
                 values[position] = a[i];
         }
             taken[position] = true;
