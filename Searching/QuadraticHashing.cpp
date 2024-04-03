@@ -31,9 +31,10 @@ int main() {
              int offset = 1;
             while (taken[position]) {
                 position = (position + offset*offset) % n;
-            }
-                offset++;
+		      offset++;
                 prob2++;
+            }
+              
                 values[position] = a[i];
         }
             taken[position] = true;
