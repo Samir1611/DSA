@@ -7,15 +7,15 @@ using namespace std;
 		int stack[maxStack];
 		int i, j, k;
 		int top = -1;
-		
+
 		bool IsEmpty(){
 			if(top==-1){
 			cout<<"Stack is Empty"<<endl;
 			return 1;
 			}
 			else return 0;
-			
 		}
+
 		void MakeEmpty(){
 				top=-1;
 		}
@@ -36,9 +36,8 @@ using namespace std;
 			else 
 			return 0;
 		}
-		int push(){
-			if (Full()){	
-			}else{
+		void push(){
+			if (!Full()){	
 			int item;
 			cout<<"Enter the item you want to enter"<<endl;
 			cin>>item;
@@ -47,14 +46,12 @@ using namespace std;
 		}
 		}
 		void pop(){
-			if(IsEmpty()){
-			}else{
+			if(!IsEmpty()){
 			top--;	
 			}
 		}
 		void Traverse(){
-			if(IsEmpty()){
-			}else{
+			if(!IsEmpty()){
 				cout<<"[";
 				for(i = 0; i<=top; i++){
 					cout<<stack[i];
@@ -62,13 +59,9 @@ using namespace std;
 					cout<<",";
 				}
 				}
-				
 					cout<<"]";
 			}
-		
-			
 		}
-		 
 	};
 	
 
